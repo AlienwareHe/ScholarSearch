@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.collections.FXCollections ?>
+
+<AnchorPane prefHeight="797.0" prefWidth="1162.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cust.scholar.controller.SearchController">
+   <children>
+      <SplitPane dividerPositions="0.27844827586206894" layoutX="106.0" layoutY="-63.0" prefHeight="511.0" prefWidth="499.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="509.0" prefWidth="185.0">
+               <children>
+                  <GridPane layoutX="110.0" layoutY="125.0" prefHeight="647.0" prefWidth="319.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="211.0" minHeight="10.0" prefHeight="57.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="211.0" minHeight="10.0" prefHeight="57.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="647.0" minHeight="10.0" prefHeight="624.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="281.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="光电子技术分类检索系统" textAlignment="CENTER" textFill="#146bc4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                        <GridPane prefHeight="309.0" prefWidth="262.0" GridPane.rowIndex="2">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="228.0" minWidth="10.0" prefWidth="110.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="234.0" minWidth="0.0" prefWidth="209.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="84.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="193.0" minHeight="10.0" prefHeight="96.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="248.0" minHeight="10.0" prefHeight="98.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="253.0" minHeight="10.0" prefHeight="92.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="234.0" minHeight="10.0" prefHeight="112.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="搜索内容：" GridPane.halignment="RIGHT" />
+                              <Label text="作者：" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                              <Label text="发表时间：" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                              <Label text="语言范围：" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                              <TextField fx:id="searchKeyword" GridPane.columnIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <TextField fx:id="searchAuthor" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </GridPane.margin>
+                              </TextField>
+                              <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="94.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="65.0" minWidth="10.0" prefWidth="45.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <TextField fx:id="searchEndYear" alignment="CENTER_RIGHT" promptText="年" GridPane.columnIndex="2">
+                                       <GridPane.margin>
+                                          <Insets right="20.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <TextField fx:id="searchStartYear" alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="72.0" promptText="年">
+                                       <GridPane.margin>
+                                          <Insets left="20.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <Label text="-" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                                       <font>
+                                          <Font size="33.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                              <ChoiceBox fx:id="searchLanguage" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                              	<GridPane.margin>
+                                    <Insets left="20.0" />
+                                </GridPane.margin>
+                              	<items>
+                              		<FXCollections fx:factory="observableArrayList">
+                              			<String fx:value="不限" />
+                              			<String fx:value="英文" />
+                              			<String fx:value="中文" />
+                              		</FXCollections>
+                              	</items>
+                              </ChoiceBox>
+                              <Label text="常用关键词：" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+                              <GridPane GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <ChoiceBox fx:id="commonWords" prefWidth="150.0">
+                                       <items>
+                                          <FXCollections fx:factory="observableArrayList">
+                                             <String fx:value="光电子技术" />
+                                             <String fx:value="光子技术" />
+                                             <String fx:value="空间光通信" />
+                                             <String fx:value="光电技术" />
+                                          </FXCollections>
+                                       </items>
+                                       <GridPane.margin>
+                                          <Insets left="20.0" />
+                                       </GridPane.margin>
+                                    </ChoiceBox>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </GridPane>
+                        <GridPane GridPane.rowIndex="3">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="135.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#doSearch" prefHeight="35.0" prefWidth="91.0" text="搜索" textFill="#242425" GridPane.halignment="CENTER" />
+                           </children>
+                        </GridPane>
+                        <Label fx:id="condition" text="Label" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="509.0" prefWidth="327.0">
+               <children>
+                  <GridPane prefHeight="647.0" prefWidth="738.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="756.0" minHeight="10.0" prefHeight="749.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="318.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <TableView fx:id="papersView" prefHeight="618.0" prefWidth="738.0">
+                          <columns>
+                            <TableColumn fx:id="titleColumn" prefWidth="552.0" text="论文标题" />
+                            <TableColumn fx:id="dateColumn" minWidth="0.0" prefWidth="93.0" text="出版日期" />
+                            <TableColumn fx:id="detailColumn" minWidth="0.0" prefWidth="93.0" text="查看详情" />
+                            <TableColumn fx:id="downloadColumn" prefWidth="94.0" text="免费下载" />
+                          </columns>
+                        </TableView>
+                        <GridPane GridPane.rowIndex="1">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#prePage" text="上一页" GridPane.halignment="RIGHT" />
+                              <Button mnemonicParsing="false" onAction="#nextPage" text="下一页" GridPane.columnIndex="2" GridPane.halignment="LEFT" />
+                              <Label fx:id="pageNum" text="1" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </GridPane>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

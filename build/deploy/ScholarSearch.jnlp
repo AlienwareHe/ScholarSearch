@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="ScholarSearch.jnlp">
+  <information>
+    <title>ScholarSearch</title>
+    <vendor>alienhe</vendor>
+    <description>ScholarSearch</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="ScholarSearch.jar" size="44507" download="eager" />
+    <jar href="libs\dom4j-1.6.1.jar" size="313898" download="eager" />
+    <jar href="libs\guava-19.0.jar" size="2308517" download="eager" />
+    <jar href="libs\httpclient-4.5.1.jar" size="732765" download="eager" />
+    <jar href="libs\jsoup-1.10.3.jar" size="355356" download="eager" />
+    <jar href="libs\poi-3.9.jar" size="1869113" download="eager" />
+    <jar href="libs\poi-ooxml-3.9.jar" size="936648" download="eager" />
+    <jar href="libs\poi-ooxml-schemas-3.9.jar" size="4802621" download="eager" />
+    <jar href="libs\xmlbeans-2.4.0.jar" size="2694049" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="0" height="0" main-class="application.Main"  name="ScholarSearch" />
+  <update check="background"/>
+</jnlp>
